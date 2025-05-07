@@ -1,10 +1,26 @@
-alphabet: {a,b} 
+alphabet: {a, b}
 start: q0
-accepting: {q3} 
-q0 (_, _ -> Z, q1)
-q1 (a, _ -> A, q1)
-q1 (a, _ -> AA, q1)
-q1 (b, A -> _, q1)
-q1 (_, _ -> _, q2)
-q2 (_, Z -> _, q3)
-q3 (_, _ -> _, q3)
+accepting: {qf}
+
+q0 (_, _ -> Z, q_equal)
+
+q_equal (a, _ -> A, q_a1)
+q_equal (a, Z -> AZ, q_a1)
+q_equal (b, Z -> Z, q_equal)
+q_equal (_, Z -> Z, qf)
+
+q_a1 (a, _ -> A, q_a2)
+q_a1 (a, Z -> AZ, q_a2)
+q_a1 (b, A -> _, q_equal)
+q_a1 (b, Z -> Z, q_equal)
+q_a1 (_, Z -> Z, qf)   
+
+q_a2 (a, _ -> AA, q_a3)
+q_a2 (a, Z -> AAZ, q_a3)
+q_a2 (b, A -> _, q_a1)
+q_a2 (b, Z -> Z, q_a1)
+q_a2 (_, Z -> Z, qf)
+
+q_a3 (b, A -> _, q_a2)
+q_a3 (b, Z -> Z, q_a2)
+q_a3 (_, Z -> Z, qf)
