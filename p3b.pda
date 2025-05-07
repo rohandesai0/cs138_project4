@@ -1,18 +1,17 @@
 alphabet: {a, b}
 start: start
-accepting: {s5}
+accepting: {s4}
 
 start (_, _ -> X, s0)
 s0 (a, _ -> N, s0)
-s0 (b, _ -> _, s1)
-s1 (b, _ -> _, s2)
-s2 (b, _ -> _, s3)
-s3 (_, _ -> _, s4)
+s0 (b, N -> _, s1)
 
-s4 (b, N -> BB, s4)
-s4 (_, X -> _, s5)
+s1 (b, N -> _, s1)
+s1 (_, _ -> _, s2)
 
-s4 (_, _ -> _, s6)
-s6 (b, B -> _, s6)
-s6 (_, X -> _, s5)
+s2 (b, _ -> BB, s2)
+s2 (_, _ -> _, s3)
+
+s3 (b, B -> _, s3)
+s3 (_, X -> _, s4)
 
