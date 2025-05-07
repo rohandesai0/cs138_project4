@@ -3,6 +3,7 @@ start: start
 accepting: {s2}
 
 start (_, _ -> X, s0)
+
 s0 (a, _ -> N, s0)
 s0 (_, _ -> _, s1)
 
@@ -10,4 +11,4 @@ s1 (b, N -> _, s1)
 s1 (_, N -> _, s2)
 
 s1 (_, X -> _, s3) 
-s3 (b, _ -> _, s3)
+s3 (b, _ -> _, s2)
