@@ -1,6 +1,5 @@
-alphabet: {a, b}
 start: start
-accepting: {s7}
+accepting: {s2,s7}
 
 start (a, _ -> Z, s0)
 s0 (a, _ -> "", s1)
@@ -12,4 +11,3 @@ s4 (a, B -> "", s5)
 s5 (_, B -> "", s6)
 s6 (_, B -> "", s4)
 s4 (_, Z -> "", s7)
-
