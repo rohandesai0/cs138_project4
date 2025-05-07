@@ -1,6 +1,6 @@
-alphabet = {a,b} 
-start = q0
-accepting = {q2}
+alphabet: {a,b} 
+start: q0
+accepting: {q2}
 
 q0 (_, _ -> Z, q1)
 
