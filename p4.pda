@@ -2,13 +2,13 @@ alphabet = {a,b}
 start = q0
 accepting = {q2}
 
-q0 (_, _ -> $, q1)
+q0 (_, _ -> Z, q1)
 
-q1 (a, $ -> A$, q1)
+q1 (a, Z -> AZ, q1)
 q1 (a, A -> AA, q1)
 q1 (a, B -> _, q1)
 
-q1 (b, $ -> B$, q1) 
+q1 (b, Z -> BZ, q1) 
 q1 (b, B -> BB, q1)   
 q1 (b, A -> _, q1)
 

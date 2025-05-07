@@ -1,10 +1,10 @@
 alphabet = {a,b} 
 start: q0
 accepting: {q3} 
-q0 (_, _ -> $, q1)
+q0 (_, _ -> Z, q1)
 q1 (a, _ -> A, q1)
 q1 (a, _ -> AA, q1)
 q1 (b, A -> _, q1)
 q1 (_, _ -> _, q2)
-q2 (_, $ -> _, q3)
+q2 (_, Z -> _, q3)
 q3 (_, _ -> _, q3)
